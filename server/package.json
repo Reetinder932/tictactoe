@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "chmod +x node_modules/.bin/nodemon",
     "dev": "nodemon ./index.js"
   },
   "keywords": [],
