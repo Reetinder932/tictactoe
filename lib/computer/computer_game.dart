@@ -210,6 +210,7 @@ class _EasyState extends State<Easy> {
                     _makePlayerMove(index);
                   },
                   child: Container(
+                    margin: EdgeInsets.fromLTRB(2, 2, 2, 2),
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -256,8 +257,8 @@ class _EasyState extends State<Easy> {
     return Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.green,
-        borderRadius: BorderRadius.circular(5),
+        // color: Colors.green,
+        // borderRadius: BorderRadius.circular(5),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.3),
