@@ -103,6 +103,7 @@ io.on("connection", (socket) => {
           username: username,
           socketID: socket.id,
           playerType: "O",
+          points: 0,
         }
         socket.join(roomId);
         room.players.push(player);
