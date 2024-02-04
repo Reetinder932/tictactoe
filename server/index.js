@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 var server = http.createServer(app);
 const Room = require('./models/room');
-const Room1 = require('./models/room1');
+// const Room1 = require('./models/room1');
 const usermodel = require('./models/user_model');
 var io = require('socket.io')(server);
 app.use(express.json());
@@ -27,6 +27,7 @@ io.on("connection", (socket) => {
         socketID: socket.id,
         username: username,
         playerType: 'X',
+        points: 0,
       };
       room.players.push(player);
       room.turn = player;
@@ -141,7 +142,7 @@ io.on("connection", (socket) => {
   socket.on('winner', async ({ winnerSocketId, roomId }) => {
     try {
       let room = await Room.findById(roomId);
-      let player = room.players.find((player) => player.socketID == winnerSocketId);
+      let player = room.players.find((playerr) => playerr.socketID == winnerSocketId);
       player.points = player.points + 1;
       room = await room.save();
       if (player.points == room.maxRounds) {

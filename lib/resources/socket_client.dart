@@ -10,7 +10,7 @@ class SocketClient {
 
   //  Socket client constructor
   SocketClient._internal() {
-    socket = IO.io('http://localhost:3000', <String, dynamic>{
+    socket = IO.io('https://tictactoe-6ca8.onrender.com/', <String, dynamic>{
       'transports': ['websocket'],
       'autoConnect': false,
     });
@@ -22,3 +22,5 @@ class SocketClient {
     return _instance!;
   }
 }
+// 
+// 

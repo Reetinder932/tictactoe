@@ -17,13 +17,12 @@ const player = new mongoose.Schema({
         type: String,
     },
     email: {
-        required: true,
         type: String,
         unique: true
     },
     password: {
-        required: true,
         type: String,
     }
 
 });
+module.exports = player;
